@@ -47,8 +47,8 @@ let generateExcuse = () => {
     "on the street",
     "in the park"
   ];
-
-  let proIndx = Math.floor(Math.random() * pronoun.length);
+  /* version 1 */
+  /*  let proIndx = Math.floor(Math.random() * pronoun.length);
   let subIndx = Math.floor(Math.random() * subject.length);
   let actIndx = Math.floor(Math.random() * action.length);
   let possIndx = Math.floor(Math.random() * posession.length);
@@ -64,5 +64,16 @@ let generateExcuse = () => {
     posession[possIndx] +
     " " +
     where[wheIndx]
-  );
+  ); */
+
+  /* version 2 */
+
+  let excuseArrays = [pronoun, subject, action, posession, where];
+
+  let excuse = excuseArrays.map(arr => {
+    let randomIndex = Math.floor(Math.random() * arr.length);
+    return arr[randomIndex];
+  });
+
+  return excuse.join(" ");
 };
